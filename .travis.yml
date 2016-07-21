@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.4"
+install:
+  - pip install flask
+  - pip install telepot
+  - pip install configparser
+script: nosetests --with-coverage --cover-erase --cover-package PochaCompetition
+after_success:
+  coveralls
