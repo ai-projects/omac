@@ -1,6 +1,6 @@
 import unittest
 import configparser
-from core.models.base import Engine
+from core.models.base import DBManager
 from core.models.tasks import Task
 
 class TestUM(unittest.TestCase):

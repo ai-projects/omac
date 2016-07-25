@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../mbus-frame/.idea/mbus-frame.iml" filepath="$PROJECT_DIR$/../mbus-frame/.idea/mbus-frame.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/omac.iml" filepath="$PROJECT_DIR$/.idea/omac.iml" />
     </modules>
   </component>
