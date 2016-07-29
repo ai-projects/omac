@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2dd949ed-5a87-4c6a-b206-cdc015cbbe2c" name="rpi-home" url="http://192.168.1.252">
+        <fileTransfer host="192.168.1.252" port="22" accessType="SFTP" password="dfe7dfd3dfc4dfcbdfc7dfcfdfc3dfd9dfe7dfcbdfd9dfcbdfc9dfd8dfcf" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

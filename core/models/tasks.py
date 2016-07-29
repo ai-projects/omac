@@ -1,13 +1,13 @@
 import datetime
 import enum
 
-from .base import Base
+from core.models import Base
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
 from sqlalchemy import DateTime
 from sqlalchemy import Enum
-from ..patterns.enum import DeclEnum
+
 
 class Task(Base):
     __tablename__ = 'task'
@@ -18,6 +18,7 @@ class Task(Base):
     notes = Column(String(250))
     reg_date = Column(DateTime, default=datetime.datetime.utcnow())
     deadline = Column(DateTime)
+    exec_date = Column(DateTime)
     reminder = Column(DateTime)
     repetition_unit = Column(Enum('day',
                                   'month',
@@ -27,3 +28,10 @@ class Task(Base):
 
     # FIXME :  AttributeError: 'tuple' object has no attribute 'replace'
     repetition_value = Column(Integer)
+
+    def __repr__(self):
+        return "<Task object id[{id}] (" \
+               "subject='{subject}', notes='{notes}', reg_date='{reg_date}', " \
+               "deadline='{deadline}', reminder='{reminder}', " \
+               "repetition_unit='{repetition_unit}', repetition_value='{repetition_value}" \
+               ")'".format(**self.__dict__)

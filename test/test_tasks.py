@@ -1,16 +1,17 @@
 import unittest
 import configparser
-from core.models.base import DBManager
+
+from core.models import DBManager
 from core.models.tasks import Task
 
 class TestUM(unittest.TestCase):
     def setUp(self):
         # TODO : create test setup
-        # config = configparser.ConfigParser()
-        # config.read('omac.conf')
-        # engine = config.get('test', 'engine')
-        # path = config.get('test', 'path')
-        # self.engine = Engine(engine, path, reset_db=True)
+        config = configparser.ConfigParser()
+        config.read('/opt/omac/omac.conf')
+        engine = config.get('test', 'engine')
+        path = config.get('test', 'path')
+        self.engine = DBManager(engine, path, reset_db=True)
         pass
 
     def test_task_unique_subject(self):
