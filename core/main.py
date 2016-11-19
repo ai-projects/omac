@@ -1,7 +1,10 @@
 import configparser
+import os
 
 from core.managers import TaskManager
 from core.models import DBManager
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 class ConfigureParser(object):
@@ -9,7 +12,8 @@ class ConfigureParser(object):
     def __init__(self, configuration_path):
 
         self._config = configparser.ConfigParser()
-        self._config.read(configuration_path)
+        config_path = os.path.join(BASE_DIR, configuration_path)
+        self._config.read(config_path)
 
     @property
     def persistence(self):

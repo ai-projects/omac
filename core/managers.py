@@ -8,12 +8,19 @@ class TaskManager:
     def __init__(self, engine):
         self._engine = engine
 
-    def create_task(self, subject, **kargs):
-        task = Task(subject=subject, **kargs)
+    def add_task(self, task: Task):
+        session = self._engine.persistence.session()
+        session.add(task)
+        session.commit()
+        print('[TASK-DB]: add ', task)
+
+    def create_task(self, subject, **kwargs):
+        task = Task(subject=subject, **kwargs)
 
         session = self._engine.persistence.session()
         session.add(task)
         session.commit()
+        print('[TASK-DB]: created ', task)
 
     def get_task_by_subject(self, subject):
         session = self._engine.persistence.session()

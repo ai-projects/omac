@@ -30,8 +30,7 @@ class Task(Base):
     repetition_value = Column(Integer)
 
     def __repr__(self):
-        return "<Task object id[{id}] (" \
+        return "<Task object (" \
                "subject='{subject}', notes='{notes}', reg_date='{reg_date}', " \
-               "deadline='{deadline}', reminder='{reminder}', " \
-               "repetition_unit='{repetition_unit}', repetition_value='{repetition_value}" \
-               ")'".format(**self.__dict__)
+               "deadline='{deadline}'" \
+               ")'".format(subject=self.subject, notes=self.notes, reg_date=self.reg_date, deadline=self.deadline)
